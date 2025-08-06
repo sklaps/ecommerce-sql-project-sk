@@ -50,7 +50,9 @@ This project answers those questions and more, using real-world behavioral data 
 - **Excel**  
   - Clustered Column Charts for visualizing top products and brands  
 - **GitHub**  
+
   - Code versioning, project sharing
+
 
 ---
 
