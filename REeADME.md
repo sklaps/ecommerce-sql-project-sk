@@ -131,8 +131,16 @@ FROM new_project.small_file
 GROUP BY event_type
 ORDER BY total_events DESC;
 
+-- 🧾 Q2. What percent of users move from viewing → cart → purchasing?
+SELECT 
+    (SELECT COUNT(DISTINCT user_id) FROM new_project.small_file WHERE event_type='view') AS total_views,
+    (SELECT COUNT(DISTINCT user_id) FROM new_project.small_file WHERE event_type='cart') AS total_carts,
+    (SELECT COUNT(DISTINCT user_id) FROM new_project.small_file WHERE event_type='purchase') AS total_purchases;
 
-
+-- 💡 Insights:
+-- Calculates total unique users at each stage of the funnel.
+-- Helps identify drop-off points between viewing, adding to cart, and purchasing.
+-- Useful for prioritizing UX improvements and marketing campaigns.
 
 
 
