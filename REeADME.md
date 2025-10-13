@@ -124,34 +124,14 @@ were labeled as “Unknown” to maintain completeness.
 ---
 
 ### 🧮 Q1. How are user events distributed? (Views, Carts, Purchases)
-SELECT event_type, COUNT(*) AS total_events
-FROM new_project.small_file
-GROUP BY event_type
-ORDER BY total_events DESC;
-
-
-💡 Insights
-
-Most actions are view events — typical for eCommerce browsing.
-Only ~1.6% of views lead to purchases → potential for funnel improvement.
-Marketing teams can target high-view, low-purchase categories to increase conversion.
-
-### 🧾 Q2. What percent of users move from viewing → cart → purchasing?
-SELECT 
-    (SELECT COUNT(DISTINCT user_id) FROM new_project.small_file WHERE event_type='view') AS total_views,
-    (SELECT COUNT(DISTINCT user_id) FROM new_project.small_file WHERE event_type='cart') AS total_carts,
-    (SELECT COUNT(DISTINCT user_id) FROM new_project.small_file WHERE event_type='purchase') AS total_purchases;
-
-
-
-
-### 🧮 Q1. How are user events distributed? (Views, Carts, Purchases)
 
 ```sql
 SELECT event_type, COUNT(*) AS total_events
 FROM new_project.small_file
 GROUP BY event_type
 ORDER BY total_events DESC;
+
+
 
 
 
