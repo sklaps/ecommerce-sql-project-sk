@@ -121,6 +121,7 @@ were labeled as “Unknown” to maintain completeness.
 ---
 ## 📊 Analysis & SQL Queries
 ---
+```sql
 ###   questions
  🧮 Q1. How are user events distributed? (Views, Carts, Purchases)
 SELECT event_type, COUNT(*) AS total_events
