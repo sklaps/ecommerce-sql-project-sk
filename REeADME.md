@@ -1,6 +1,5 @@
 
 
-
 # EcomPulse — Advanced eCommerce Analytics (SK)
 
 > Turning raw event logs into business decisions — SQL + Excel charts + RFM segmentation.  
@@ -38,17 +37,6 @@ SQL (data cleaning, window functions, CTEs), Excel charting, business storytelli
   - `cart`: 1,109  
 - **Time window:** `2019-10-01 00:00:00` → `2019-10-01 04:22:05`  
   *(peak activity at 03:00 UTC)*
-
-
-
-
-
-
-
-
-
-
-
 
 
 
