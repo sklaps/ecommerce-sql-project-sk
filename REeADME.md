@@ -123,7 +123,7 @@ were labeled as “Unknown” to maintain completeness.
 
 ---
 
-### 🧮 Q1. How are user events distributed? (Views, Carts, Purchases)
+🧮 Q1. How are user events distributed? (Views, Carts, Purchases)
 
 ```sql
 SELECT event_type, COUNT(*) AS total_events
