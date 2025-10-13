@@ -121,8 +121,8 @@ were labeled as “Unknown” to maintain completeness.
 ---
 ## 📊 Analysis & SQL Queries
 ---
-###  busness questions
-  q1
+###   questions
+ ## 🧮 Q1. How are user events distributed? (Views, Carts, Purchases)
 ```sql
 SELECT event_type, COUNT(*) AS total_events
 FROM new_project.small_file
