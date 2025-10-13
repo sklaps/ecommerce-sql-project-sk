@@ -122,7 +122,7 @@ were labeled as “Unknown” to maintain completeness.
 ## 📊 Analysis & SQL Queries
 ---
 
-###   questions
+##   QUESTIONS
 
 ```sql
  🧮 Q1. How are user events distributed? (Views, Carts, Purchases)
