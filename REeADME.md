@@ -130,9 +130,7 @@ GROUP BY event_type
 ORDER BY total_events DESC;
 
 
-### 🧾 Q2. What percent of users move from viewing → cart → purchasing?
-
-```sql
+ 🧾 Q2. What percent of users move from viewing → cart → purchasing?
 SELECT 
     (SELECT COUNT(DISTINCT user_id) FROM new_project.small_file WHERE event_type='view') AS total_views,
     (SELECT COUNT(DISTINCT user_id) FROM new_project.small_file WHERE event_type='cart') AS total_carts,
