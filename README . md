@@ -1,6 +1,43 @@
-## hedder 
 
 
+
+# EcomPulse — Advanced eCommerce Analytics (SK)
+
+> Turning raw event logs into business decisions — SQL + Excel charts + RFM segmentation.  
+> Portfolio case study: data cleaning, funnel & hourly analysis, top-product & revenue insights, customer segmentation.
+
+---
+
+## TL;DR
+
+**What I did:**  
+Cleaned event logs, built funnel and hourly analyses, identified top products & brand revenue, and created an RFM segmentation — all using SQL (MySQL) and Excel visualizations.
+
+**Why it matters:**  
+Shows which brands drive revenue vs. volume, when to run promotions, and which customers to target for retention.
+
+**Result highlights:**  
+- Apple leads revenue (~₹211,843)  
+- Samsung leads unit sales (364 purchases)  
+- 55 VIP customers (RFM = 10)
+
+**Skills demonstrated:**  
+SQL (data cleaning, window functions, CTEs), Excel charting, business storytelling.
+
+---
+
+## Quick Project Facts
+
+- **Source table:** `new_project.small_file`  
+- **Total events (sample):** 93,912  
+- **Distinct users:** 19,226  
+- **Distinct products:** 19,908  
+- **Event types:**  
+  - `view`: 91,268  
+  - `purchase`: 1,535  
+  - `cart`: 1,109  
+- **Time window:** `2019-10-01 00:00:00` → `2019-10-01 04:22:05`  
+  *(peak activity at 03:00 UTC)*
 
 
 
