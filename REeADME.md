@@ -204,6 +204,48 @@ Suggests upselling opportunities for mid-tier brands.
 
 ---
 
+## 🧠 RFM Segmentation — Understanding Customer Value
+
+### 🧩 What is RFM?
+RFM (Recency, Frequency, Monetary) is a marketing analytics technique used to measure customer engagement and loyalty:
+- **Recency** → How recently the customer made a purchase  
+- **Frequency** → How often they purchase  
+- **Monetary** → How much money they spend  
+
+It helps identify **VIPs**, **loyal customers**, and **churn risks**.
+
+---
+
+### 🧮 SQL Query Used
+
+```sql
+WITH purchases AS (
+    SELECT user_id,
+           COUNT(*) AS frequency,
+           SUM(price) AS monetary,
+           TIMESTAMPDIFF(HOUR, MAX(event_time), (SELECT MAX(event_time) FROM new_project.small_file)) AS recency_hours
+    FROM new_project.small_file
+    WHERE event_type = 'purchase'
+    GROUP BY user_id
+)
+SELECT *,
+       NTILE(4) OVER (ORDER BY recency_hours ASC) AS recency_score,
+       NTILE(4) OVER (ORDER BY frequency DESC) AS frequency_score,
+       NTILE(4) OVER (ORDER BY monetary DESC) AS monetary_score,
+       CONCAT(
+           NTILE(4) OVER (ORDER BY recency_hours ASC),
+           NTILE(4) OVER (ORDER BY frequency DESC),
+           NTILE(4) OVER (ORDER BY monetary DESC)
+       ) AS rfm_code,
+       (
+           NTILE(4) OVER (ORDER BY recency_hours ASC) +
+           NTILE(4) OVER (ORDER BY frequency DESC) +
+           NTILE(4) OVER (ORDER BY monetary DESC)
+       ) AS rfm_score
+FROM purchases
+LIMIT 100;
+
+
 
 
 
