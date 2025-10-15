@@ -194,7 +194,7 @@ WHERE event_type = 'purchase' AND brand IS NOT NULL
 GROUP BY brand
 ORDER BY total_revenue DESC
 LIMIT 10;
-```
+
 
 
 💡 Insights
@@ -202,7 +202,7 @@ Apple generates the most total revenue (₹211,843), while Samsung leads in tota
 Apple’s fewer but high-value transactions show strong brand power.
 Suggests upselling opportunities for mid-tier brands.
 
-
+```
 ---
 
 ## 🧠 RFM Segmentation — Understanding Customer Value
