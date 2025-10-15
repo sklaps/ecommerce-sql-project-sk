@@ -131,6 +131,12 @@ FROM new_project.small_file
 GROUP BY event_type
 ORDER BY total_events DESC;
 
+chart
+
+💡 Insights
+Most actions are view events — typical for eCommerce browsing.
+Only ~1.6% of views lead to purchases → potential for funnel improvement.
+Marketing teams can target high-view, low-purchase categories to increase conversion.
 
  🧾 Q2. What percent of users move from viewing → cart → purchasing?
 SELECT 
@@ -138,19 +144,65 @@ SELECT
     (SELECT COUNT(DISTINCT user_id) FROM new_project.small_file WHERE event_type='cart') AS total_carts,
     (SELECT COUNT(DISTINCT user_id) FROM new_project.small_file WHERE event_type='purchase') AS total_purchases;
 
+chart
+
+💡 Insights
+View-to-cart conversion: ~1.2%
+Cart-to-purchase conversion: ~138% (repeat buyers or multiple items).
+Funnel shows where users drop off — ideal area for UX or pricing optimization.
+
+🛍️ Q3. Which are the top 10 most purchased products?
+
+SELECT product_id, COUNT(*) AS purchase_count
+FROM new_project.small_file
+WHERE event_type = 'purchase'
+GROUP BY product_id
+ORDER BY purchase_count DESC
+LIMIT 10;
+
+chart
+
+💡 Insights
+
+Samsung and Apple dominate product-level sales.
+Product IDs like 1004856 & 1004767 are top sellers.
+These can be featured in ad campaigns or bundles.
+
+💰 Q4. Which brands have the highest average selling price?
+
+SELECT brand, ROUND(AVG(price), 2) AS avg_price
+FROM new_project.small_file
+WHERE event_type = 'purchase' AND brand IS NOT NULL
+GROUP BY brand
+ORDER BY avg_price DESC
+LIMIT 10;
+
+chart
+
+💡 Insights
+Premium brands like Mercury and Apple show high average prices.
+Indicates their luxury positioning in the market.
+Helps pricing teams understand product tier gaps.
+
+💵 Q5. Which brands drive the most total revenue?
+
+SELECT brand, 
+       ROUND(SUM(price), 2) AS total_revenue, 
+       COUNT(*) AS total_purchases
+FROM new_project.small_file
+WHERE event_type = 'purchase' AND brand IS NOT NULL
+GROUP BY brand
+ORDER BY total_revenue DESC
+LIMIT 10;
 
 
+💡 Insights
+Apple generates the most total revenue (₹211,843), while Samsung leads in total purchases.
+Apple’s fewer but high-value transactions show strong brand power.
+Suggests upselling opportunities for mid-tier brands.
 
 
-
-
-
-
-
-
-
-
-
+---
 
 
 
