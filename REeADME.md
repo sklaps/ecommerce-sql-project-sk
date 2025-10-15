@@ -247,6 +247,9 @@ FROM purchases
 LIMIT 100;
 
 
+```
+
+
 
 
 
