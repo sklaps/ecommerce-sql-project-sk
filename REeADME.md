@@ -194,6 +194,7 @@ WHERE event_type = 'purchase' AND brand IS NOT NULL
 GROUP BY brand
 ORDER BY total_revenue DESC
 LIMIT 10;
+```
 
 
 💡 Insights
